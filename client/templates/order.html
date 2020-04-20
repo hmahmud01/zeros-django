@@ -1,0 +1,126 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+
+{% block adminsection %}
+<div id="cart" uk-offcanvas="mode: push; flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">                        
+        <button class="uk-offcanvas-close" type="button" uk-close></button>                                                
+        <h3 class="uk-h4 zeros-head">Cart</h3>      
+                        
+        <form class="uk-form-stacked">
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Name</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="form-stacked-text" type="text" placeholder="Full Name">
+                </div>
+            </div>
+        
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-select">Select City</label>
+                <div class="uk-form-controls">
+                    <select class="uk-select" id="form-stacked-select">
+                        <option>Dhaka</option>
+                        <option>Khulna</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-select">Select Area</label>
+                    <div class="uk-form-controls">
+                        <select class="uk-select" id="form-stacked-select">
+                            <option>Dhanmondi</option>
+                            <option>Kolabagan</option>
+                        </select>
+                    </div>
+                </div>
+        
+            <div class="uk-margin">
+                <div class="uk-form-label">Preference</div>
+                <div class="uk-form-controls">
+                    <label><input class="uk-radio" type="radio" name="radio1"> Lunch</label><br>
+                    <label><input class="uk-radio" type="radio" name="radio2"> Dinner</label>
+                </div>
+            </div>        
+            <div class="uk-margin">
+                <button class="uk-button uk-button-danger">Search</button>
+            </div>    
+        </form>
+    </div>
+</div>
+
+<!-- itemsList -->
+<section id="foods-items">
+    <div class="uk-container">
+        <div class="head">
+            <h1 class="uk-heading-bullet">All the order list</h1>
+            <p class="uk-heading-line"><span>Previous and ongoing orders are listed below</span></p>
+        </div>
+
+        <div class="uk-child-width-1@m" uk-grid>
+            <div class="uk-margin-large">
+                <table class="uk-table uk-table-hover uk-table-divider">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Order Made at</th>                                
+                            <th>Order Made by</th>  
+                            <th>Status</th>
+                            <th>Content</th>
+                            <th>Total cost</th>
+                            <th>Modification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>04.33 PM</td>
+                            <td>+88017964$#%#$%</td>
+                            <td>Ongoing</td>
+                            <td>2 pizza 1 burder</td>
+                            <td>152.00 ৳</td>
+                            <td><button class="uk-button uk-button-secondary">Make It Done</button></td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>04.33 PM</td>
+                            <td>+88017964$#%#$%</td>
+                            <td>Done</td>
+                            <td>2 pizza 1 burder</td>
+                            <td>152.00 ৳</td>
+                            <td><button class="uk-button uk-button-secondary">Make It Done</button></td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>04.33 PM</td>
+                            <td>+88017964$#%#$%</td>
+                            <td>Cancelled</td>
+                            <td>2 pizza 1 burder</td>
+                            <td>152.00 ৳</td>
+                            <td><button class="uk-button uk-button-secondary">Make It Done</button></td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>04.33 PM</td>
+                            <td>+88017964$#%#$%</td>
+                            <td>Ongoing</td>
+                            <td>2 pizza 1 burder</td>
+                            <td>152.00 ৳</td>
+                            <td><button class="uk-button uk-button-warning">Make It Cancel</button></td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>04.33 PM</td>
+                            <td>+88017964$#%#$%</td>
+                            <td>Ongoing</td>
+                            <td>2 pizza 1 burder</td>
+                            <td>152.00 ৳</td>
+                            <td><button class="uk-button uk-button-secondary">Make It Done</button></td>
+                        </tr>                            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

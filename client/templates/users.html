@@ -1,0 +1,43 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+
+{% block adminsection %}
+<!-- userList -->
+<section id="users">
+    <div class="uk-container">
+        <div class="head">
+            <h1 class="uk-heading-bullet">Current Users in the System</h1>
+            <p class="uk-heading-line"><span>Click Update button to change Status of the user</span></p>
+        </div>
+
+        <div class="uk-child-width-1@m" uk-grid>
+            <div class="uk-margin-large">
+                <table class="uk-table uk-table-hover uk-table-divider">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Status</th>
+                            <th>Email</th>
+                            <th>Modification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in data %}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.phone }}</td>
+                            <td>{{ user.is_active }}</td>
+                            <td>{{ user.user.email }} </td>
+                            <td><button class="uk-button uk-button-secondary">Update</button></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

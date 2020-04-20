@@ -1,0 +1,130 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+
+{% block adminsection %}
+<div id="cart" uk-offcanvas="mode: push; flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">                        
+        <button class="uk-offcanvas-close" type="button" uk-close></button>                                                
+        <h3 class="uk-h4 zeros-head">Cart</h3>      
+                        
+        <form class="uk-form-stacked">
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Name</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="form-stacked-text" type="text" placeholder="Full Name">
+                </div>
+            </div>
+        
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-select">Select City</label>
+                <div class="uk-form-controls">
+                    <select class="uk-select" id="form-stacked-select">
+                        <option>Dhaka</option>
+                        <option>Khulna</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-select">Select Area</label>
+                    <div class="uk-form-controls">
+                        <select class="uk-select" id="form-stacked-select">
+                            <option>Dhanmondi</option>
+                            <option>Kolabagan</option>
+                        </select>
+                    </div>
+                </div>
+        
+            <div class="uk-margin">
+                <div class="uk-form-label">Preference</div>
+                <div class="uk-form-controls">
+                    <label><input class="uk-radio" type="radio" name="radio1"> Lunch</label><br>
+                    <label><input class="uk-radio" type="radio" name="radio2"> Dinner</label>
+                </div>
+            </div>        
+            <div class="uk-margin">
+                <button class="uk-button uk-button-danger">Search</button>
+            </div>    
+        </form>
+    </div>
+</div>
+
+<!-- itemsList -->
+<section id="foods-items">
+    <div class="uk-container">
+        <div class="head">
+            <h1 class="uk-heading-bullet">Current Food in Stock</h1>
+            <p class="uk-heading-line"><span>Click Update button to change any necessary information</span></p>
+        </div>
+
+        <div class="uk-child-width-1@m" uk-grid>
+            <div class="uk-margin-large">
+                <table class="uk-table uk-table-hover uk-table-divider">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Title</th>
+                            <th>QTY(Available)</th>
+                            <th>Status</th>
+                            <th>Price</th>
+                            <th>Modification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for food in data %}
+                        <tr>
+                            <td>{{ food.id }}</td>
+                            <td>{{ food.name }}</td>
+                            <td>{{ food.qty }}</td>
+                            <td>{{ food.status }}</td>
+                            <td>{{ food.price }} ৳</td>
+                            <td><button class="uk-button uk-button-secondary">Update</button></td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td>01</td>
+                            <td>Pizza</td>
+                            <td>15</td>
+                            <td>Active</td>
+                            <td>152.00 ৳</td>
+                            <td><button class="uk-button uk-button-secondary">Update</button></td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>Pizza</td>
+                            <td>15</td>
+                            <td>Active</td>
+                            <td>152.00 ৳</td>
+                            <td><button class="uk-button uk-button-secondary">Update</button></td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>Pizza</td>
+                            <td>15</td>
+                            <td>Active</td>
+                            <td>152.00 ৳</td>
+                            <td><button class="uk-button uk-button-secondary">Update</button></td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>Pizza</td>
+                            <td>15</td>
+                            <td>Active</td>
+                            <td>152.00 ৳</td>
+                            <td><button class="uk-button uk-button-secondary">Update</button></td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>Pizza</td>
+                            <td>15</td>
+                            <td>Active</td>
+                            <td>152.00 ৳</td>
+                            <td><button class="uk-button uk-button-secondary">Update</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

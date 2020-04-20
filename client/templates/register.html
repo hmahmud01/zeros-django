@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="contact">
+    <div>
+        <div class="uk-grid-collapse" uk-grid>
+            <div class="uk-width-1-2@m h-100">
+                <div class="h-1-1">
+                    <div class="uk-background-cover h-1-1 uk-dark uk-panel uk-flex uk-flex-center uk-flex-middle">
+                        <div class="uk-flex uk-flex-column uk-animation-slide-top-small">
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-margin-bottom">                                        
+                                    <img width="325" class="uk-margin-bottom" src="{% static 'img/logo_2.png' %}" alt="" uk-img>
+                                    <p class="uk-flex uk-flex-center uk-margin-small-bottom">Registration with your Credentials</p>
+                                    <form action="{% url 'saveuser' %}" method="post" class="uk-form-stacked">{% csrf_token %}
+                                        <div class="uk-margin">
+                                            <label class="uk-form-label" for="form-stacked-text">Email Address</label>
+                                            <div class="uk-form-controls">
+                                                <input class="uk-input" id="form-stacked-text" name="email" type="email" placeholder="Email">
+                                            </div>
+                                        </div>
+
+                                        <div class="uk-margin">
+                                            <label class="uk-form-label" for="form-stacked-text">Phone Number</label>
+                                            <div class="uk-form-controls">
+                                                <input class="uk-input" id="form-stacked-text" name="phone" type="text" placeholder="phone" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="uk-margin">
+                                            <label class="uk-form-label" for="form-stacked-text">Full Name</label>
+                                            <div class="uk-form-controls">
+                                                <input class="uk-input" id="form-stacked-text" name="name" type="text" placeholder="Name">
+                                            </div>
+                                        </div>
+
+                                        <div class="uk-margin">
+                                            <label class="uk-form-label" for="form-stacked-text">Password</label>
+                                            <div class="uk-form-controls">
+                                                <input class="uk-input" id="form-stacked-text" name="password" type="password" placeholder="Password">
+                                            </div>
+                                        </div>     
+                                        <div class="uk-margin">
+                                            <label class="uk-form-label" for="form-stacked-text">Confirm Password</label>
+                                            <div class="uk-form-controls">
+                                                <input class="uk-input" id="form-stacked-text" name="conf_pass" type="password" placeholder="Confirm Password">
+                                            </div>
+                                        </div>            
+                                        <input type="submit" class="uk-button uk-button-danger uk-width-1-1" value="Register" />                
+                                        <div class="uk-flex uk-flex-center uk-flex-middle">
+                                            <p>Already Have An Account? <a class="uk-button uk-button-text" href="{% url 'login' %}">Login</a></p>
+                                        </div>
+                                    </form>
+                                </div>
+                                <p class="uk-text-center"> <span class="zeros-sub-head copy">Copyright</span>  © <a href="#">[i]RONMAMA</a>@2020</p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="uk-width-expand@m">
+                <div class="h-100">
+                    <div class="uk-background-cover uk-dark uk-panel" uk-parallax="bgy: -200" style="background-image: url(/static/img/register.jpg);">
+                        <div class="h-100 uk-flex uk-flex-right uk-flex-bottom">
+                            <div class="uk-flex-column">
+                                <div class="uk-flex uk-flex-column uk-animation-slide-top-small uk-margin-bottom">
+                                    <div>
+                                        <img src="{% static 'img/logo_2_ws.png' %}" width="385" alt="logo" uk-img>
+                                    </div>                            
+                                </div>  
+                            </div>                                                  
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</section> 
+{% endblock %}

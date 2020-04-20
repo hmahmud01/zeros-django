@@ -1,0 +1,87 @@
+{% extends 'base_admin.html' %}
+{% load static %}
+
+{% block adminsection %}
+
+<!-- itemsList -->
+<section id="foods-items">
+    <div class="uk-container">
+        <div class="head">
+            <h1 class="uk-heading-bullet">Add Food</h1>
+            <p class="uk-heading-line"><span>Fill the informations for all the items</span></p>
+        </div>
+
+        <div class="uk-child-width-1@m" uk-grid>
+            <form action="{% url 'savefood' %}" method="post" class="uk-form-horizontal uk-margin-large" enctype="multipart/form-data"> {% csrf_token %}
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="title">Food Name</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="title" type="text" name="name" placeholder="Food Name">
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="price">Food Price</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="price" type="text" name="price" placeholder="Food Price (৳)">
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="qty">Quantity</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="qty" type="text" name="qty" placeholder="Quantity to Avail">
+                    </div>
+                </div>
+                
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="description">Description</label>
+                    <div class="uk-form-controls">
+                        <textarea class="uk-textarea" rows="5" id="description" name="description" placeholder="Description"></textarea>
+                    </div>                        
+                </div>
+            
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-horizontal-select">Time Specific?</label>
+                    <div class="uk-form-controls">
+                        <select class="uk-select" name="time" id="form-horizontal-select">
+                            <option>Lunch</option>
+                            <option>Dinner</option>
+                            <option>Both</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <div class="uk-margin ">
+                    <div class="uk-form-label">Status</div>
+                    <div class="uk-form-controls uk-form-controls-text">
+                        <label><input class="uk-radio" type="radio" name="status" value="avail"> Available</label><br>
+                        <label><input class="uk-radio" type="radio" name="status" value="out"> Not Available</label><br>
+                        <label><input class="uk-radio" type="radio" name="status" value="few"> Few Left</label>
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="img">Upload Image</label>
+                    <div class="uk-form-controls">
+                        <div uk-form-custom>
+                            <input type="file" name="img" multiple>
+                            <button class="uk-button uk-button-default" type="button" tabindex="-1">Select</button>
+                        </div>
+                    </div>                        
+                </div>     
+                
+                <div class="uk-margin uk-flex uk-flex-right">
+                    <input type="submit" class="uk-button uk-button-primary" value="Add to Library" />
+                    <input type="cancel" class="uk-button uk-button-danger" value="Cancel" />
+                    {% comment %} <button class="uk-button uk-button-primary" type="button" tabindex="-1">Add To Library</button> {% endcomment %}
+                    {% comment %} <button class="uk-button uk-button-Danger" type="button" tabindex="-1">Cancel</button>                      {% endcomment %}
+                </div>   
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
